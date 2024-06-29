@@ -98,6 +98,7 @@ export function TicTacToe() {
 
     const options = arr.map((v, i) => [v, i]).filter(v => v[0] === 0).map(v => v[1]);
     const tree: SolveTree = {opponentMove: move, gameStateNum: newState, optimal: options[0], loss: true, wins: 0};
+    let immediateWin: boolean = false;
 
     // Iterate through each computer option
     options.forEach(opt => {
@@ -111,6 +112,8 @@ export function TicTacToe() {
         // If computer move results in a win condition, wins are weighted by the number of
         // moves the opponent would have been able to make
         wins = remainingOptions.length;
+        immediateWin = true;
+        tree.optimal = opt;
       } else {
         // If the game continues, iterate through opponent options
         remainingOptions.forEach(ro => { 
@@ -130,7 +133,7 @@ export function TicTacToe() {
       if (!loss && wins >= tree.wins) {
         tree.wins = wins;
         tree.loss = false;
-        tree.optimal = opt;
+        if (!immediateWin) tree.optimal = opt;
         tree.nextMoves = opponentMoves;
       }
     });

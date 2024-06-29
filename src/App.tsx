@@ -1,8 +1,10 @@
 import React from 'react';
-import { TicTacToe } from './TicTacToe';
 import './App.css';
-import {Home} from './Home';
-import {TabView} from './TabView';
+import { About } from './About';
+import { BeforeAfterGame } from './before_after_game/BeforeAfterGame';
+import { Home } from './Home';
+import { TabView } from './TabView';
+import { TicTacToe } from './TicTacToe';
 
 
 function App() {
@@ -11,8 +13,9 @@ function App() {
     <TabView
       tabs={[
         {title: "Home", component: <Home/>},
-        {title: "Play Tic-Tac-Toe", component: <TicTacToe/>, spacing: 3},
-        {title: "Random tab", component: <div><p>Random tab</p></div>}
+        {title: "About Me", component: <About/>},
+        {title: "Play Tic-Tac-Toe", component: <TicTacToe/>, spacing: 2},
+        {title: "Puzzle Game", component: <BeforeAfterGame/>}
       ]}
     />
   );

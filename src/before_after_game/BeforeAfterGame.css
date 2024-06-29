@@ -1,0 +1,17 @@
+.BeforeAfter-Word-Button {
+    width:100px;
+    height:50px;
+}
+
+.BeforeAfter-Word-Button-Used {
+    color: darkgray;
+}
+
+.BeforeAfter-Word-label {
+    width: 75px;
+    height: 25px;
+    background-color: lightskyblue;
+    padding:5px;
+    border: 1px solid;
+    border-color: black;
+}

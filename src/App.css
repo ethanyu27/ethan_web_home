@@ -43,10 +43,23 @@
 }
 
 
+.TabView-Tab-Bar {
+  background-color: lightblue;
+  height: 50px;
+}
+
 .TabView-Tab {
   background-color: lightblue;
   border-radius: 0;
   height: 50px;
-  /* border-top: none; */
-  /* width: 100px; */
+}
+
+.TabView-Tab-Selected {
+  background-color: cyan;
+  border-radius: 0;
+  height: 50px;
+}
+
+.TabView-Content {
+  margin-left: 10px;
 }

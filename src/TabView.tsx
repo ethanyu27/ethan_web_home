@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './App.css';
 
 export interface Tab {
     title: string;
@@ -14,21 +15,22 @@ export interface TabViewProps {
 export function TabView(props: TabViewProps) {
 
     const [selected, setSelected] = React.useState<number>(props.defaultSelected ?? 0);
-    
-    React.useEffect(() => {
-
-    }, [selected]);
 
     const buttons = props.tabs.map((tab, ind) => {
-        return (
-            <button className="TabView-Tab" onClick={() => setSelected(ind)}>{tab.title}</button>
-        );
-    })
+        return (<button 
+            className={`TabView-Tab${selected === ind ? '-Selected' : ''}`}
+            onClick={() => setSelected(ind)}>{tab.title}
+        </button>);
+    });
 
-    return (<div>
+    return (
+    <div className={'TabView-Tab-Bar'}>
         {buttons}
         <div style={{marginTop: `${10 * (props.tabs[selected]?.spacing ?? 0)}px`}}/>
-        {props.tabs[selected].component ?? <></>}
+        <div className={'TabView-Content'}>
+            {props.tabs[selected].component ?? <></>}
+        </div>
+       
     </div>);
 }
 
