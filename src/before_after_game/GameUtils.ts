@@ -1,3 +1,4 @@
+import Puzzles from './puzzles.json';
 
 export interface WordItem {
     name: string,
@@ -6,11 +7,7 @@ export interface WordItem {
 
 export const readTiles = (n: number): WordItem[][] => {
     if (n === 3) {
-        return [
-            ['TREE', 'BOAT', 'GIFT'],
-            ['WASH', 'SPORT', 'PET'],
-            ['ANCIENT', 'SUITCASE', 'FRONT'],
-        ].map(row => row.map(word => ({name: word, used: false})));
+        return Puzzles.prompts[0].split(";").map(prompt => prompt.split(",")).map(row => row.map(word => ({name: word, used: false})));
     } else if (n === 4) {
         return [
             ['PLOT', 'PICTURE', 'KIND'],
