@@ -7,7 +7,7 @@ import { TabView } from './TabView';
 import { TicTacToe } from './TicTacToe';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
