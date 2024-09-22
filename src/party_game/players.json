@@ -1,0 +1,7 @@
+{
+    "Brian": { "target": "Truelian", "word": "Test1"},
+    "Truelian": { "target": "Ethan", "word": "Test2"},
+    "Ethan": { "target": "Elissa", "word": "Test3"},
+    "Elissa": { "target": "Claire", "word": "Test4"},
+    "Claire": { "target": "Brian", "word": "Test5"}
+}
