@@ -1,5 +1,5 @@
 import React from 'react';
-import './WordAssasains.css';
+import './WordAssassins.css';
 import Players from './players.json';
 
 import { GameDialog } from './GameDialog';
@@ -7,6 +7,8 @@ import { GameDialog } from './GameDialog';
 const RULES: string[] = [
     "Each player will be given a target and a word.",
     "The goal of the game is to discretely get your target to say the given word.",
+    "The exact word must be said. A variant of the word does not count.",
+    "You must be the one that caused/manipulated the conversation to lead your target to say their word (i.e. if they say it on a phone call with someone else, it does not count).",
     "Once your target has said that word, show them your target/word page to confirm and they are eliminated from the game.",
     "After you have eliminated a player, you receive their target and word as your new assignment.",
     "Keep playing and eliminating until there is one person left.",
@@ -20,7 +22,7 @@ const PLAYER_DATA: {[key: string] : {target: string, word: string}} = Players;
 const NAMES = Object.keys(PLAYER_DATA);
 const BLANK_TARGET = {target: "", word: ""};
 
-export function WordAssasains() {
+export function WordAssassins() {
     const options = [(<option disabled selected>Player Name</option>), ...NAMES.map(opt => (<option>{opt}</option>))];
     const rules = RULES.map((line, ind) => (<p>{`${ind + 1}. ${line}`}</p>));
 
@@ -97,7 +99,7 @@ export function WordAssasains() {
 
     const playerContent = (<>
         <div className={"Div-Center"}>
-            <p>Dear {name}, you have the following assignment:</p>
+            <p>Special Agent {name}, you have been given the following assignment:</p>
         </div>
         <div className={"Div-Center"}>
             <label className={"Player-Label"}>{`Target: ${targetData.target}`}</label>
@@ -113,7 +115,7 @@ export function WordAssasains() {
     return (
         <div className={"Game-Background"}>
             <div className={"Game-Content"}>
-                <label className={"Heading-Label"}>Word Assasains</label>
+                <label className={"Heading-Label"}>Word Assassins</label>
                 {instructionMode ? instructionContent : playerContent}
             </div>
             <GameDialog

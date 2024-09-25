@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import './WordAssasains.css';
+import './WordAssassins.css';
 
 export interface GameDialogProps {
     dialogText: string;

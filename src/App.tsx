@@ -7,11 +7,11 @@ import { TabView } from './TabView';
 import { TicTacToe } from './TicTacToe';
 
 import {
-  HashRouter as Router,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import { WordAssasains } from "./party_game/WordAssasains";
+import { WordAssassins } from "./party_game/WordAssassins";
 
 function App() {
 
@@ -25,12 +25,12 @@ function App() {
   />);
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
-        <Route path="/" element={mainView}/>
-        <Route path="/partygame" element={<WordAssasains/>}/>
+        <Route path="/partygame" element={<WordAssassins/>}/>
+        {/* <Route path="/" element={mainView}/> */}
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
