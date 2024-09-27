@@ -1,7 +1,8 @@
 {
-    "Brian": { "target": "Ethan", "word": "Attachment"},
-    "Truelian": { "target": "Brian", "word": "Library"},
-    "Ethan": { "target": "Claire", "word": "Princess"},
-    "Elissa": { "target": "Truelian", "word": "Midnight"},
-    "Claire": { "target": "Elissa", "word": "China"}
+    "Brian": { "target": "Ethan", "word": "pristine"},
+    "Truelian": { "target": "Brian", "word": "serendipity"},
+    "Ethan": { "target": "Claire", "word": "tranquility"},
+    "Elissa": { "target": "Truelian", "word": "eclectic"},
+    "Claire": { "target": "Tony", "word": "ripple"},
+    "Tony": { "target": "Elissa", "word": "elixir"}
 }

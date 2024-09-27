@@ -28,7 +28,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/partygame" element={<WordAssassins/>}/>
-        {/* <Route path="/" element={mainView}/> */}
+        <Route path="/" element={mainView}/>
       </Routes>
     </HashRouter>
   );

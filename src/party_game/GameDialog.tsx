@@ -18,11 +18,11 @@ export function GameDialog(props: GameDialogProps) {
                 <br></br>
                 {props.dialogBody}
                 <div className={"Div-Center"}>
-                    {props.hasConfirm && <button style={{marginRight: "5px"}} onClick={() => {
+                    {props.hasConfirm && <button className={"Button Confirm-Button"} onClick={() => {
                         props.closeModal();
                         props.handleConfirm?.();
                     }}>Confirm</button>}
-                    <button onClick={() => props.closeModal()}>{props.hasConfirm ? "Cancel" : "Okay"}</button>
+                    <button className={"Button"} onClick={() => props.closeModal()}>{props.hasConfirm ? "Cancel" : "Okay"}</button>
                 </div>
             </div>
         </Modal>

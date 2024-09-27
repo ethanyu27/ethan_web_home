@@ -1,6 +1,7 @@
 import React from 'react';
 import './WordAssassins.css';
 import Players from './players.json';
+import Agent from './Agent.png';
 
 import { GameDialog } from './GameDialog';
 
@@ -23,7 +24,7 @@ const NAMES = Object.keys(PLAYER_DATA);
 const BLANK_TARGET = {target: "", word: ""};
 
 export function WordAssassins() {
-    const options = [(<option disabled selected>Player Name</option>), ...NAMES.map(opt => (<option>{opt}</option>))];
+    const options = [(<option disabled selected>Your Name</option>), ...NAMES.map(opt => (<option>{opt}</option>))];
     const rules = RULES.map((line, ind) => (<p>{`${ind + 1}. ${line}`}</p>));
 
     const [name, setName] = React.useState<string>("");
@@ -93,13 +94,15 @@ export function WordAssassins() {
         <div>
             <label className={"Name-Label"}>Select Player:</label>
             <select className={"Name-Field"} children={options} onChange={e => setName(e.target.value)}/>
-            <button onClick={handleEnter}>Enter Game</button>
+            <button className={"Button"} onClick={handleEnter}>Enter Game</button>
         </div>
     </>);
 
     const playerContent = (<>
         <div className={"Div-Center"}>
-            <p>Special Agent {name}, you have been given the following assignment:</p>
+            <p className={"Cursive"}>
+                Special Agent {name}, your mission, should you choose to accept it, is to eliminate
+                your target assigned below:</p>
         </div>
         <div className={"Div-Center"}>
             <label className={"Player-Label"}>{`Target: ${targetData.target}`}</label>
@@ -107,15 +110,20 @@ export function WordAssassins() {
         </div>
         <br></br>
         <div className={"Div-Center"}>
-            <button className={"Player-Button"} onClick={showRules}>Rules</button>
-            <button className={"Player-Button"} onClick={handleElimination}>Player Eliminated</button>
+            <button className={"Button Player-Button"} onClick={showRules}>Rules</button>
+            <button className={"Button Player-Button"} onClick={handleElimination}>Player Eliminated</button>
         </div>
     </>);
 
     return (
         <div className={"Game-Background"}>
             <div className={"Game-Content"}>
-                <label className={"Heading-Label"}>Word Assassins</label>
+                <div className={"Heading-Row"}>
+                    <img className={"Heading-Image"} src={Agent} alt={"Agent"}/>
+                    <label className={"Heading-Label"}>Word Assassins</label>
+                    <img className={"Heading-Image"} src={Agent} alt={"Agent"}/>
+                </div>
+                <br/>
                 {instructionMode ? instructionContent : playerContent}
             </div>
             <GameDialog
