@@ -7,7 +7,7 @@ export function Home() {
         <h2>Welcome!</h2>
         <p>Website is in progress, but feel free to look around!</p>
       </div>
-    )
+    );
 }
 
 export default Home;

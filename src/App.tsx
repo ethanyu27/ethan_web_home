@@ -15,14 +15,18 @@ import { WordAssassins } from "./party_game/WordAssassins";
 
 function App() {
 
-  const mainView = (<TabView
-    tabs={[
-      {title: "Home", component: <Home/>},
-      {title: "About Me", component: <About/>},
-      {title: "Play Tic-Tac-Toe", component: <TicTacToe/>, spacing: 2},
-      {title: "Puzzle Game", component: <BeforeAfterGame/>}
-    ]}
-  />);
+  const mainView = (
+    <div className={"App-background"}>
+      <TabView
+      tabs={[
+        {title: "Home", component: <Home/>},
+        {title: "About Me", component: <About/>},
+        {title: "Play Tic-Tac-Toe", component: <TicTacToe/>, spacing: 2},
+        {title: "Puzzle Game", component: <BeforeAfterGame/>}
+      ]}
+    />
+    </div>
+  );
 
   return (
     <HashRouter>

@@ -9,6 +9,7 @@ const RULES: string[] = [
     "Each player will be given a target and a word.",
     "The goal of the game is to discreetly get your target to say the given word.",
     "The exact word must be said. A variant of the word does not count.",
+    "The may not use your target's word to get them to say that word.",
     "You must be the one that caused/manipulated the conversation to lead your target to say their word (i.e., if they say it on a phone call with someone else, it does not count).",
     "Once your target has said that word, show them your target/word page to confirm, and they are eliminated from the game.",
     "After you have eliminated a player, you receive their target and word as your new assignment.",

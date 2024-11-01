@@ -5,15 +5,18 @@ export interface WordItem {
     used: boolean
 }
 
+const nPuzzles: number = Puzzles?.prompts?.length ?? 0;
+
+export const getNewPuzzle = (current: number): number => {
+    if (nPuzzles < 2) return 0;
+    let newPuzzle = Math.floor(Math.random() * (nPuzzles - 1));
+    if (newPuzzle >= current) newPuzzle++;
+    return newPuzzle;
+}
+
 export const readTiles = (n: number): WordItem[][] => {
-    if (n === 3) {
-        return Puzzles.prompts[0].split(";").map(prompt => prompt.split(",")).map(row => row.map(word => ({name: word, used: false})));
-    } else if (n === 4) {
-        return [
-            ['PLOT', 'PICTURE', 'KIND'],
-            ['CHECK', 'MARK', 'LOW'],
-            ['RATE', 'SUPER', 'PITCH'],
-        ].map(row => row.map(word => ({name: word, used: false})));
+    if (Puzzles?.prompts?.[n]) {
+        return Puzzles.prompts[n].split(";").map(prompt => prompt.split(",")).map(row => row.map(word => ({name: word, used: false})));
     }
     return [];
 }
@@ -33,8 +36,9 @@ export const updateAnswers = (answerList: string[], word: string) => {
 }
 
 export const readSolution = (n: number) => {
-    if (n === 3) return ['ANCIENT', 'GIFT', 'TREE', 'PET', 'FRONT', 'BOAT', 'SPORT', 'WASH', 'SUITCASE'];
-    if (n === 4) return ['SUPER', 'KIND', 'RATE', 'MARK', 'LOW', 'PICTURE', 'PITCH', 'CHECK', 'PLOT'];
+    if (Puzzles?.answers?.[n]) {
+        return Puzzles.answers[n].split(",");
+    }
     return [];
 }
 

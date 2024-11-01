@@ -17,15 +17,21 @@ export function TabView(props: TabViewProps) {
     const [selected, setSelected] = React.useState<number>(props.defaultSelected ?? 0);
 
     const buttons = props.tabs.map((tab, ind) => {
-        return (<button 
-            className={`TabView-Tab${selected === ind ? '-Selected' : ''}`}
-            onClick={() => setSelected(ind)}>{tab.title}
-        </button>);
+        return (
+        <div className={'Tabview-Tab-Container'} style={{zIndex: `${props.tabs.length - ind}`}}>
+             <button 
+                className={`TabView-Tab${selected === ind ? ' TabView-Tab-Selected' : ''}`}
+                onClick={() => setSelected(ind)}>{tab.title}
+            </button>
+        </div>
+        );
     });
 
     return (
-    <div className={'TabView-Tab-Bar'}>
-        {buttons}
+    <div className={'TabView-Style'}>
+        <div className={'TabView-Tab-Bar'}>
+            {buttons}
+        </div>
         <div style={{marginTop: `${10 * (props.tabs[selected]?.spacing ?? 0)}px`}}/>
         <div className={'TabView-Content'}>
             {props.tabs[selected].component ?? <></>}

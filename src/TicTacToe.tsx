@@ -213,16 +213,18 @@ export function TicTacToe() {
   const buttons = gridVals.map((arr, i) => {
     return (<div>
       {arr.map((val, j) => {
-      return (<button id={`Tab${i}`} className="App-button" onClick={() => {if (gridVals[i][j] === "_" && (gameState === gs.PLAYERMOVE)) press_button(i,j)}}>
+      return (<button id={`Tab${i}`} className="App-button Ttt-button" onClick={() => {if (gridVals[i][j] === "_" && (gameState === gs.PLAYERMOVE)) press_button(i,j)}}>
         {val}</button>)
     })}</div>);
   })
 
   return (
     <div>
-    {gameText}
-    {buttons}
-    <button onClick={reset}>Reset</button>
+      {gameText}
+      <div className="Spacer">
+        {buttons}
+      </div>
+      <button className="App-button" onClick={reset}>Reset</button>
     </div>
   );
 }
