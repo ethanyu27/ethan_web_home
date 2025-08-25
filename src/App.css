@@ -51,7 +51,11 @@
   border-color: darkcyan;
   border-style: solid;
   margin: 2px;
+}
 
+.App-button:active {
+  background-color: darkcyan;
+  color: white;
 }
 
 .Ttt-button {

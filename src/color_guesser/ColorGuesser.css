@@ -1,0 +1,22 @@
+.InlineRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px;
+    align-items: center;
+}
+
+.ColorPickerInput {
+    width: 30px;
+}
+
+.ColorPickerLabel {
+    font-weight: bold;
+}
+
+.ColorBlock {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 3px
+}

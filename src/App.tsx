@@ -5,6 +5,7 @@ import { BeforeAfterGame } from './before_after_game/BeforeAfterGame';
 import { Home } from './Home';
 import { TabView } from './TabView';
 import { TicTacToe } from './TicTacToe';
+import { ColorGuesser } from './color_guesser/ColorGuesser';
 
 import {
   HashRouter,
@@ -22,7 +23,8 @@ function App() {
         {title: "Home", component: <Home/>},
         {title: "About Me", component: <About/>},
         {title: "Play Tic-Tac-Toe", component: <TicTacToe/>, spacing: 2},
-        {title: "Puzzle Game", component: <BeforeAfterGame/>}
+        {title: "Puzzle Game", component: <BeforeAfterGame/>},
+        {title: "Color Guesser", component: <ColorGuesser/>}
       ]}
     />
     </div>
